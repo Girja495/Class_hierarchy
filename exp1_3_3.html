@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Person Inheritance Example</h2>
+<button onclick="showDetails()">Show Details</button>
+
+<p id="output"></p>
+
+<script>
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+}
+
+class Student extends Person{
+    constructor(name,age,roll){
+        super(name,age);
+        this.roll=roll;
+    }
+}
+
+class Teacher extends Person{
+    constructor(name,age,subject){
+        super(name,age);
+        this.subject=subject;
+    }
+}
+
+function showDetails(){
+    let s=new Student("Girija",20,70927);
+    let t=new Teacher("Sharma",40,"Math");
+
+    document.getElementById("output").innerHTML=
+        `Student: ${s.name}, Age: ${s.age}, Roll: ${s.roll}<br>
+         Teacher: ${t.name}, Age: ${t.age}, Subject: ${t.subject}`;
+}
+</script>
+
+</body>
+</html>
